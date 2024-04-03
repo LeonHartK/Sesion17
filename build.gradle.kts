@@ -4,3 +4,25 @@
  * This is a general purpose Gradle build.
  * To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.6/samples
  */
+ 
+ // Kotlin
+plugins {
+    id("java")
+}
+
+// Kotlin
+tasks.named("jar", Jar::class) {
+    manifest {
+        attributes(mapOf("Main-Class" to "paquete1.myapp.SayHello"))
+    }
+}
+
+// Kotlin
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+}
+
